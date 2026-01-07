@@ -1,0 +1,199 @@
+/* =========================================
+   1. RESET & VARIABLES
+   ========================================= */
+:root {
+    --bg-dark: #020408;
+    --bg-card: #0a1018;
+    --primary: #00f0ff; /* Biru Neon */
+    --primary-dim: rgba(0, 240, 255, 0.2);
+    --text: #e0e6ed;
+    --text-muted: #8b9bb4;
+    --border: rgba(0, 240, 255, 0.15);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. NAVBAR
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background: rgba(2, 4, 8, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo { font-size: 24px; font-weight: 900; color: var(--primary); letter-spacing: 2px; }
+.nav-links { list-style: none; display: flex; gap: 30px; }
+.nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+.nav-links a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    /* Jalur Poster */
+    background: url('images/awikwok.png') no-repeat center center/cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--bg-dark) 10%, rgba(2,4,8,0.7) 100%);
+}
+
+.hero-content { position: relative; z-index: 2; padding: 20px; }
+.tagline { color: var(--primary); letter-spacing: 4px; font-size: 14px; margin-bottom: 10px; text-transform: uppercase; }
+.hero h1 { font-size: clamp(40px, 8vw, 100px); font-weight: 900; line-height: 1; margin-bottom: 20px; text-transform: uppercase; color: #fff; text-shadow: 0 0 20px rgba(0, 240, 255, 0.5); }
+.hero-meta { color: var(--primary); letter-spacing: 2px; font-size: 14px; margin-bottom: 30px; font-weight: 600; }
+
+.btn-main {
+    padding: 15px 40px;
+    background: var(--primary);
+    color: #000;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    transition: 0.3s;
+    box-shadow: 0 0 20px var(--primary-dim);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-main:hover { background: #fff; box-shadow: 0 0 40px var(--primary); }
+
+/* =========================================
+   4. CONTAINER & CAST GRID (UPDATED)
+   ========================================= */
+.container { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
+.section-title { text-align: center; margin-bottom: 50px; }
+.section-title h2 { font-size: 32px; font-weight: 700; color: var(--text); margin-bottom: 15px; }
+.line { width: 60px; height: 3px; background: var(--primary); margin: 0 auto; box-shadow: 0 0 10px var(--primary); }
+
+/* [UPDATED] Cast Grid: 3 Kolom Tetap */
+.cast-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); /* Memaksa 3 kolom */
+    gap: 30px; 
+    text-align: center;
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+.cast-card { background: var(--bg-card); padding: 20px; border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: 0.3s; }
+.cast-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+.img-box { width: 100px; height: 100px; margin: 0 auto 15px; border-radius: 50%; overflow: hidden; border: 2px solid var(--primary-dim); }
+.img-box img { width: 100%; height: 100%; object-fit: cover; }
+.cast-card h3 { font-size: 16px; margin-bottom: 5px; color: #fff; }
+.cast-card p { font-size: 13px; color: var(--text-muted); }
+
+/* =========================================
+   5. SINOPSIS & STORY
+   ========================================= */
+.story-content { max-width: 800px; margin: 0 auto; text-align: center; line-height: 1.8; color: #ccc; }
+.lead-text { font-size: 20px; color: var(--primary); font-style: italic; margin-bottom: 20px; }
+
+/* =========================================
+   6. CREDITS (BILLING BLOCK)
+   ========================================= */
+.credits-section { background: #000; text-align: center; border-top: 1px solid #111; padding: 60px 20px; }
+
+.credit-header {
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+.credit-sub {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #aaa;
+}
+.credit-title {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+.credit-block {
+    font-size: 11px;
+    line-height: 1.6;
+    color: #ccc;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-family: 'Arial Narrow', sans-serif;
+}
+.credit-block.technical strong {
+    color: #fff;
+    font-weight: normal;
+}
+
+/* =========================================
+   7. PLAYER & UTILS
+   ========================================= */
+.hidden { display: none !important; }
+
+#player-view { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #000; z-index: 999; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.player-container { width: 90%; max-width: 1200px; }
+.btn-back { position: absolute; top: 30px; left: 30px; background: transparent; color: var(--text-muted); border: 1px solid var(--border); padding: 10px 20px; cursor: pointer; font-size: 14px; z-index: 1000; transition: 0.3s; }
+.btn-back:hover { color: var(--primary); border-color: var(--primary); }
+
+#stage { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border: 1px solid var(--border); box-shadow: 0 0 50px rgba(0,0,0,0.8); border-radius: 8px; overflow: hidden; }
+video { width: 100%; height: 100%; object-fit: cover; }
+
+.player-ui { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(to top, #000, transparent); display: flex; justify-content: space-between; align-items: flex-end; opacity: 0; transition: opacity 0.3s; }
+#stage:hover .player-ui { opacity: 1; }
+.badge { background: rgba(0, 240, 255, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 5px 10px; font-size: 12px; border-radius: 4px; text-transform: uppercase; margin-right: 10px; }
+.controls button { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 8px 15px; cursor: pointer; margin-left: 10px; transition: 0.2s; font-size: 12px; }
+.controls button:hover { border-color: var(--primary); color: var(--primary); }
+
+.choice-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px); display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 10; }
+.choice-overlay.show { display: flex; }
+.modal { text-align: center; animation: zoomIn 0.3s ease; }
+@keyframes zoomIn { from {transform: scale(0.8); opacity: 0;} to {transform: scale(1); opacity: 1;} }
+.modal h2 { color: var(--primary); font-size: 24px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+.modal p { font-size: 18px; margin-bottom: 30px; color: #fff; }
+.choice-btns button { display: block; width: 250px; padding: 15px; margin: 10px auto; background: transparent; border: 1px solid var(--primary); color: var(--primary); font-size: 16px; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+.choice-btns button:hover { background: var(--primary); color: #000; box-shadow: 0 0 20px var(--primary); }
+
+/* =========================================
+   8. RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 50px; }
+    #stage { height: auto; aspect-ratio: 9/16; }
+    
+    /* Responsive Cast: Jadi 2 kolom di Tablet */
+    .cast-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+    /* Responsive Cast: Jadi 1 kolom di HP kecil */
+    .cast-grid { grid-template-columns: 1fr; }
+}
