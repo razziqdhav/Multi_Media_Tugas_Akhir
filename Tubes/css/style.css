@@ -67,7 +67,7 @@
 }
 
 /* =========================================
-   1. RESET & VARIABLES (TEMA HORROR)
+   1. RESET & VARIABLES
    ========================================= */
 :root {
     --bg-dark: #050505;
@@ -85,7 +85,6 @@ html { scroll-behavior: smooth; }
 body {
     background-color: var(--bg-dark);
     color: var(--text);
-    /* Menggunakan MendlSerif Regular (DawnRg) sebagai default body */
     font-family: 'MendlSerif', serif; 
     font-weight: 400;
     overflow-x: hidden;
@@ -101,7 +100,7 @@ body::before {
 }
 
 /* =========================================
-   2. NAVBAR (UPDATED: COURIER NEW)
+   2. NAVBAR (Font Biasa / Courier New)
    ========================================= */
 .navbar {
     display: flex;
@@ -117,7 +116,6 @@ body::before {
 }
 
 .logo { 
-    /* Font mesin tik / dokumen rahasia */
     font-family: 'Courier New', Courier, monospace;
     font-size: 24px; 
     font-weight: 900; 
@@ -131,7 +129,6 @@ body::before {
     text-decoration: none; 
     color: var(--text-muted); 
     font-size: 14px; 
-    /* Font mesin tik juga */
     font-family: 'Courier New', Courier, monospace;
     font-weight: 700; 
     text-transform: uppercase; 
@@ -141,7 +138,7 @@ body::before {
 .nav-links a:hover { color: var(--primary-bright); }
 
 /* =========================================
-   3. HERO SECTION (UPDATED: REGULAR TITLE)
+   3. HERO SECTION (Regular Title)
    ========================================= */
 .hero {
     height: 100vh;
@@ -173,9 +170,7 @@ body::before {
 
 .hero h1 { 
     font-family: 'MendlSerif', serif;
-    /* UPDATE: Menggunakan Regular (400) sesuai permintaan */
-    font-weight: 400; 
-    
+    font-weight: 400; /* Regular */
     font-size: clamp(40px, 8vw, 100px); 
     line-height: 1; 
     margin-bottom: 20px; 
@@ -274,9 +269,12 @@ body::before {
     color: #e0e0e0; 
     letter-spacing: 1px; 
 }
+
+/* --- UPDATE: Peran (as Dwi, dll) jadi Font Biasa --- */
 .cast-card p { 
-    font-weight: 300;
-    font-size: 12px; 
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    font-size: 11px; 
     color: var(--text-muted); 
     text-transform: uppercase; 
     letter-spacing: 1px; 
@@ -311,23 +309,29 @@ body::before {
     border-top: 1px solid #111; 
     padding: 80px 20px; 
 }
-.credits-box h2 { 
-    font-weight: 300;
+
+/* --- UPDATE: Intro Text (Ephemeral & Association) jadi Font Biasa --- */
+.credits-box h2, .credit-sub { 
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
     font-size: 12px; 
-    letter-spacing: 4px; 
+    letter-spacing: 2px; 
     color: var(--text-muted); 
     margin-bottom: 5px; 
-    opacity: 0.6; 
+    opacity: 0.7; 
 }
+
+/* --- UPDATE: Judul Film Credits (ROOM 304 A FILM BY...) jadi Mendl Regular --- */
 .credits-box h3 { 
     font-family: 'MendlSerif', serif; 
+    font-weight: 400; /* Regular */
     font-size: 26px; 
     color: #fff; 
     margin: 25px 0; 
-    font-weight: 700; 
     text-transform: uppercase; 
     letter-spacing: 2px; 
 }
+
 .credit-block { 
     font-family: 'MendlSerif', serif; 
     font-weight: 300; 
